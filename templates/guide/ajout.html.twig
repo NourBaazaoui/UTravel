@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+{% block title %} Sign Up {% endblock %}
+
+{% block body %}
+
+    <h1> Ajouter Compte </h1>
+    {{ form_start(formA) }}
+    <table>
+        <tr>
+            <td>{{ form_label(formA.firstName,"Votre prenom") }}</td>
+            <td>{{ form_widget(formA.firstName) }}</td>
+            <td>{{ form_errors(formA.firstName) }}</td>
+
+        </tr>
+
+        <tr>
+            <td>{{ form_label(formA.lastName,"Votre nom") }}</td>
+            <td>{{ form_widget(formA.lastName) }}</td>
+            <td>{{ form_errors(formA.lastName) }}</td>
+        </tr>
+        <tr>
+            <td>{{ form_label(formA.email,"email") }}</td>
+            <td>{{ form_widget(formA.email) }}</td>
+            <td>{{ form_errors(formA.email) }}</td>
+        </tr>
+
+    </table>
+
+{% endblock %}

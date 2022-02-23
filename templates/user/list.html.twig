@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% blockbody %}
+<h1> liste Utilisateurs
+    <a href="{{path('adds')}}" > ajouter </a>   </h1>
+
+<table border=5>
+    {%for c in user %}
+        <tr>
+            <td> {{c.id}} </td>
+            <td> {{c.email}}  </td>
+            <td> <a href="{{path('update',{'id':c.id})}}" > edit</a>
+                <a href="{{path('deletes',{'email':c.email})}}" > delete</a> </td>
+        </tr>
+    {% endfor %}
+</table>
+{% endblock %}

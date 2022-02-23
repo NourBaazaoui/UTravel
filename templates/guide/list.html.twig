@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<h1> liste Guide
+    <a href="{{path('addGuide')}}" > ajouter </a>   </h1>
+
+<table border=5>
+    {%for c in stud %}
+        <tr>
+            <td> {{c.email}}  </td>
+            <td> <a href="{{path('updates',{'email':c.email})}}" > edit</a>
+                <a href="{{path('delete',{'email':c.email})}}" > delete</a> </td>
+        </tr>
+    {% endfor %}
+</table>
+{% endblock %}
